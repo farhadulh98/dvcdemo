@@ -42,3 +42,7 @@ git push origin main
 git add . && git commit -m "update Reame.md"
 
 git push origin main
+
+git add . && git commit -m "paramerts added"
+
+git push origin main
