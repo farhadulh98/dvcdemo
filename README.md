@@ -31,8 +31,14 @@ git add .
 
 git commit -m "first commit"
 
+git add . && git commit -m "update Reame.md"
+
 git remote add origin https://github.ccom/farhadulh98/dvcdemo.git
 
 git branch -M main
+
+git push origin main
+
+git add . && git commit -m "update Reame.md"
 
 git push origin main
