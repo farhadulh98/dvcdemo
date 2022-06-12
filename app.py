@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import os
+import joblib
+
 import numpy as np
 from prediction_service import prediction
 
@@ -18,8 +20,8 @@ def index():
     if request.method == "POST":
         try:
             if request.form:
-                dict_req = dict(request.form)
-                response = prediction.form_response(dict_req)
+                data_req = dict(request.form)
+                response = prediction.form_response(data_req)
                 return render_template("index.html", response=response)
             elif request.json:
                 response = prediction.api_response(request.json)
@@ -30,7 +32,7 @@ def index():
             error = {"error": "Something went wrong!! Try again later!"}
             error = {"error": e}
 
-            return render_template("404.html", error=error)
+            return render_template("404.html", error=e)
     else:
         return render_template("index.html")
 
